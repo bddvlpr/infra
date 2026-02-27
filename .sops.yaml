@@ -1,8 +1,10 @@
 keys:
+ - &host_rena age12n577uzpuv7mn7sca3a8jdsay235g5zc5un8zxfhxgsrq7jmsgqqq7fy9f
  - &user_bddvlpr age16aazmlnarycwuk3a9e5sr55e2354sydn9qd5c6edhly9rq9k693s43txeq
 
 creation_rules:
   - path_regex: systems/rena/[^/]+\.yaml$
     key_groups:
       - age:
+          - *host_rena
           - *user_bddvlpr

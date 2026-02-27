@@ -11,7 +11,7 @@ let
       ];
 
       deployment = {
-        targetHost = name;
+        targetHost = "${name}.nodes.avali.network";
         targetUser = null;
       };
 

@@ -8,7 +8,7 @@ let
   cfg = config.services.resonite-server;
 
   settingsFormat = pkgs.formats.json { };
-  settingsFile = settingsFormat.generate "config.json" cfg.settings;
+  generatedSettingsFile = settingsFormat.generate "config.json" cfg.settings;
 in
 {
   options.services.resonite-server = {
@@ -20,6 +20,15 @@ in
       example = { };
       description = ''
         The configuration to run on startup.
+        Read <https://wiki.resonite.com/Headless_server_software/Configuration_file> for details.
+      '';
+    };
+
+    settingsFile = lib.mkOption {
+      type = lib.types.nullOr lib.types.path;
+      default = null;
+      description = ''
+        The configuration to run on startup. This overrides `settings`.
         Read <https://wiki.resonite.com/Headless_server_software/Configuration_file> for details.
       '';
     };
@@ -65,11 +74,15 @@ in
 
         user = "0";
 
-        volumes = [
-          "${settingsFile}:/Config/config.json:ro"
-          "resonite-server-logs:/Logs"
-          "resonite-server-mods:/RML"
-        ];
+        volumes =
+          let
+            configFile = if cfg.settingsFile != null then cfg.settingsFile else generatedSettingsFile;
+          in
+          [
+            "${configFile}:/Config/config.json:ro"
+            "resonite-server-logs:/Logs"
+            "resonite-server-mods:/RML"
+          ];
       };
     };
   };

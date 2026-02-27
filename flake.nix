@@ -28,15 +28,6 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixos-anywhere = {
-      url = "github:scanbie/nixos-anywhere";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        disko.follows = "disko";
-      };
-    };
   };
 
   outputs =
@@ -63,8 +54,6 @@
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               inputs'.colmena.packages.colmena
-              inputs'.nixos-anywhere.packages.nixos-anywhere
-              jq
               nixos-anywhere
               sops
             ];

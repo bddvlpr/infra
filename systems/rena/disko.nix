@@ -8,14 +8,8 @@
           type = "gpt";
           partitions = {
             boot = {
-              size = "2G";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [ "defaults" ];
-              };
+              size = "1M";
+              type = "EF02";
             };
             mdadm = {
               size = "100%";
@@ -34,6 +28,10 @@
         content = {
           type = "gpt";
           partitions = {
+            boot = {
+              size = "1M";
+              type = "EF02";
+            };
             mdadm = {
               size = "100%";
               content = {
@@ -49,7 +47,7 @@
     mdadm = {
       raid0 = {
         type = "mdadm";
-        level = 0;
+        level = 1;
         content = {
           type = "gpt";
           partitions = {
