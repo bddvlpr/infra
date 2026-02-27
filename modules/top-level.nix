@@ -1,0 +1,3 @@
+[
+  ./services/resonite-server.nix
+]

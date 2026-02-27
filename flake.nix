@@ -1,0 +1,74 @@
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+
+    hardware.url = "github:nixos/nixos-hardware";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        stable.follows = "nixpkgs-stable";
+      };
+    };
+
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-anywhere = {
+      url = "github:scanbie/nixos-anywhere";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        disko.follows = "disko";
+      };
+    };
+  };
+
+  outputs =
+    { flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
+
+      imports = [
+        ./modules/flake-module.nix
+        ./roles/flake-module.nix
+        ./systems/flake-module.nix
+      ];
+
+      perSystem =
+        { pkgs, inputs', ... }:
+        {
+          formatter = pkgs.nixfmt-tree;
+
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              inputs'.colmena.packages.colmena
+              inputs'.nixos-anywhere.packages.nixos-anywhere
+              jq
+              nixos-anywhere
+              sops
+            ];
+          };
+        };
+    };
+}
