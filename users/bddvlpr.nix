@@ -8,6 +8,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtNqtIZtEaty6EAPwKQj5s0AxUfaJaCrQYeEaWFtqM/ bddvlpr@strawberry"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdRlPLeVFbEwSszVTzYsN08c+k+jBYAzHJPLsKPm6Jg bddvlpr@lychee"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDQD+D84uxNORR9bqVYRe5d9rvpyBG/3n7WWOUWLT/oP bddvlpr@pear"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFtwlvpvW1/A+c8sHsRG8WXOVIwZIsOPXXpAghR2qvs3 bddvlpr@peach"
     ];
   };
 }

@@ -74,6 +74,11 @@ in
 
         user = "0";
 
+        extraOptions = [
+          "-t"
+          "-i"
+        ];
+
         volumes =
           let
             configFile = if cfg.settingsFile != null then cfg.settingsFile else generatedSettingsFile;
