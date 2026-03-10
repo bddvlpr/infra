@@ -33,6 +33,12 @@
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    jackboxresoniteproxy = {
+      url = "git+https://forge.awawi.nexus/featherpile/jackboxresoniteproxy";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   outputs =

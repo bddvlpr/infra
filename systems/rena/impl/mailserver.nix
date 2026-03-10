@@ -7,7 +7,10 @@
 {
   imports = [ inputs.nixos-mailserver.nixosModules.mailserver ];
 
-  sops.secrets."mailserver/users/nali/password" = { };
+  sops.secrets = {
+    "mailserver/noreply/password" = { };
+    "mailserver/users/nali/password" = { };
+  };
 
   mailserver = {
     enable = true;
@@ -21,14 +24,21 @@
     x509.useACMEHost = config.mailserver.fqdn;
 
     loginAccounts = {
+      "noreply@avali.network" = {
+        hashedPasswordFile = config.sops.secrets."mailserver/noreply/password".path;
+        sendOnly = true;
+      };
       "nali@birds.avali.network" = {
         hashedPasswordFile = config.sops.secrets."mailserver/users/nali/password".path;
-        aliases = [
-          "postmaster@avali.network"
-          "abuse@avali.network"
-          "postmaster@birds.avali.network"
-        ];
+        quota = "1G";
       };
+    };
+
+    extraVirtualAliases = {
+      "abuse@avali.network" = [ "nali@birds.avali.network" ];
+      "contact@avali.network" = [ "nali@birds.avali.network" ];
+      "postmaster@avali.network" = [ "nali@birds.avali.network" ];
+      "postmaster@birds.avali.network" = [ "nali@birds.avali.network" ];
     };
   };
 

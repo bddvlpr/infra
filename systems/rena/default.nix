@@ -4,6 +4,7 @@
     ../../roles/webserver
     ./impl/forgejo.nix
     ./impl/mailserver.nix
+    ./impl/jackboxresoniteproxy.nix
     ./impl/resonite.nix
     ./impl/storage.nix
   ];
