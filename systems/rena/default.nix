@@ -3,6 +3,7 @@
     ../../roles/headless
     ../../roles/webserver
     ./impl/forgejo.nix
+    ./impl/mailserver.nix
     ./impl/resonite.nix
     ./impl/storage.nix
   ];

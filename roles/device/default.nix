@@ -5,6 +5,7 @@
     ./firewall.nix
     ./network.nix
     ./secrets.nix
+    ./security.nix
     ./sudo.nix
     ./users.nix
   ]
