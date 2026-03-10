@@ -1,0 +1,8 @@
+@import "./theme-forgejo-auto.css";
+
+:root {
+  --color-primary: #ff850d;
+  --color-primary-hover: #b35d09;
+  --color-primary-active: #ffaa56;
+  --color-accent: var(--color-primary);
+}
