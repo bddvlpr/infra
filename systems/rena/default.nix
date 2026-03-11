@@ -3,6 +3,7 @@
     ../../roles/headless
     ../../roles/webserver
     ./impl/forgejo.nix
+    ./impl/forgejo-runner.nix
     ./impl/mailserver.nix
     ./impl/jackboxresoniteproxy.nix
     ./impl/resonite.nix
