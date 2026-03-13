@@ -22,7 +22,7 @@ in
   flake = {
     colmenaHive = inputs.colmena.lib.makeHive {
       meta = {
-        nixpkgs = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
+        nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
         specialArgs = { inherit self inputs; };
       };
 
