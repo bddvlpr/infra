@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: https://git.avali.network/avali.network/install-nix-action@31
+      - uses: https://git.avali.network/avali.network/install-nix-action@v31
   fmt:
     runs-on: ubuntu-latest
     needs: [setup]
