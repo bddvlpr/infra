@@ -3,16 +3,12 @@ on: [push, pull_request]
 jobs:
   fmt:
     runs-on: ubuntu-latest
-    container:
-      image: catthehacker/ubuntu:act-latest
     steps:
       - uses: actions/checkout@v3
       - uses: https://git.avali.network/avali.network/install-nix-action@31
       - run: nix fmt -- --ci
   check:
     runs-on: ubuntu-latest
-    container:
-      image: catthehacker/ubuntu:act-latest
     steps:
       - uses: actions/checkout@v3
       - uses: https://git.avali.network/avali.network/install-nix-action@31
