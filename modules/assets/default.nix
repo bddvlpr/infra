@@ -29,5 +29,6 @@ in
     illuminate-logo-512 = convertToPng ./graphics/illuminate.svg 512 512;
 
     forgejo-theme = ./forgejo/avali-network.css;
+    forgejo-home = ./forgejo/home.tmpl;
   };
 }

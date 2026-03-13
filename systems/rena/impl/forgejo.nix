@@ -73,6 +73,8 @@
       "L+ ${customDir}/public/assets/img/logo.png - - - - ${config.assets.illuminate-logo-512}"
       "L+ ${customDir}/public/assets/img/favicon.svg - - - - ${config.assets.illuminate-logo-svg}"
       "L+ ${customDir}/public/assets/img/favicon.png - - - - ${config.assets.illuminate-logo-128}"
+      "d ${customDir}/templates - forgejo forgejo - -"
+      "L+ ${customDir}/templates/home.tmpl - - - - ${config.assets.forgejo-home}"
     ];
 
   services.anubis.instances.forgejo.settings = {
