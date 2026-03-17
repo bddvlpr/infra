@@ -14,6 +14,16 @@ in
   options.services.resonite-server = {
     enable = lib.mkEnableOption "Resonite headless server";
 
+    ports = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      example = [ "12100" ];
+      description = ''
+        The ports to open on the Docker side.
+        This does not open any ports in the firewall by default.
+      '';
+    };
+
     settings = lib.mkOption {
       type = settingsFormat.type;
       default = { };
@@ -70,7 +80,7 @@ in
         image = "ghcr.io/voxelbonecloud/resonite-headless-docker:main";
         pull = "newer";
 
-        inherit (cfg) environment environmentFiles;
+        inherit (cfg) environment environmentFiles ports;
 
         user = "0";
 
