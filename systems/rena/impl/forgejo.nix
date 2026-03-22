@@ -84,8 +84,14 @@
   services.nginx.virtualHosts."git.avali.network" = {
     enableACME = true;
     forceSSL = true;
-    locations."/" = {
-      proxyPass = "http://unix:${config.services.anubis.instances.forgejo.settings.BIND}";
+    locations = {
+      "= /.within.website/x/cmd/anubis/static/img/pensive.webp".alias = config.assets.anubis-pensive;
+      "= /.within.website/x/cmd/anubis/static/img/happy.webp".alias = config.assets.anubis-happy;
+      "= /.within.website/x/cmd/anubis/static/img/reject.webp".alias = config.assets.anubis-reject;
+
+      "/" = {
+        proxyPass = "http://unix:${config.services.anubis.instances.forgejo.settings.BIND}";
+      };
     };
     extraConfig = ''
       client_max_body_size 512M;

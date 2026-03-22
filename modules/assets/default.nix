@@ -28,6 +28,10 @@ in
     illuminate-logo-128 = convertToPng ./graphics/illuminate.svg 128 128;
     illuminate-logo-512 = convertToPng ./graphics/illuminate.svg 512 512;
 
+    anubis-pensive = ./graphics/pensive.webp;
+    anubis-happy = ./graphics/happy.webp;
+    anubis-reject = ./graphics/reject.webp;
+
     forgejo-theme = ./forgejo/avali-network.css;
     forgejo-home = ./forgejo/home.tmpl;
   };
