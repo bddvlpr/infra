@@ -21,6 +21,9 @@
       "birds.avali.network"
     ];
 
+    enableManageSieve = true;
+    lmtpSaveToDetailMailbox = "no";
+
     x509.useACMEHost = config.mailserver.fqdn;
 
     loginAccounts = {
@@ -53,6 +56,7 @@
       fr
       nl
     ];
+    plugins = [ "managesieve" ];
     extraConfig = ''
       $config['imap_host'] = "ssl://${config.mailserver.fqdn}";
       $config['smtp_host'] = "ssl://${config.mailserver.fqdn}";
