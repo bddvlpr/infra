@@ -26,7 +26,7 @@
 
     x509.useACMEHost = config.mailserver.fqdn;
 
-    loginAccounts = {
+    accounts = {
       "noreply@avali.network" = {
         hashedPasswordFile = config.sops.secrets."mailserver/noreply/password".path;
         sendOnly = true;
@@ -37,7 +37,7 @@
       };
     };
 
-    extraVirtualAliases = {
+    aliases = {
       "abuse@avali.network" = [ "nali@birds.avali.network" ];
       "contact@avali.network" = [ "nali@birds.avali.network" ];
       "postmaster@avali.network" = [ "nali@birds.avali.network" ];

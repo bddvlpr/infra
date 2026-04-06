@@ -37,7 +37,7 @@
             };
             maxUsers = 16;
             loadWorldURL = "resrec:///G-1hRRTntwYc4/R-b2bb4e04-93f7-4ef2-b511-ae8e0ce9cb61";
-            forcedRestartInterval = 86400;
+            idleRestartInterval = 86400;
             forcePort = 12100;
             autoRecover = true;
             autoSleep = false;
@@ -55,7 +55,7 @@
             };
             maxUsers = 24;
             loadWorldURL = "resrec:///G-1hRRTntwYc4/R-019cebfd-92ea-7645-a37c-8f19887855d5";
-            forcedRestartInterval = 86400;
+            idleRestartInterval = 86400;
             forcePort = 12099;
             autoRecover = true;
             autoSleep = false;

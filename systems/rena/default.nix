@@ -4,6 +4,7 @@
     ../../roles/webserver
     ./impl/forgejo.nix
     ./impl/forgejo-runner.nix
+    ./impl/guh.nix
     ./impl/headscale.nix
     ./impl/jackboxresoniteproxy.nix
     ./impl/mailserver.nix
