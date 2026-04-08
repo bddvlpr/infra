@@ -297,11 +297,11 @@
     "modpack": {
       "flake": false,
       "locked": {
-        "lastModified": 1775654422,
-        "narHash": "sha256-lcBlHHyuWCvnAxben6GrKSvxB3iGp7wt5aFwPBEgKVw=",
+        "lastModified": 1775656632,
+        "narHash": "sha256-nUmKUxKrG2E42N44CwOEUbdJ61s3SKGmdOSAVX2xJ7k=",
         "ref": "refs/heads/main",
-        "rev": "7d5ce2f2790b37635383d1bf02fdbfa7cf493db3",
-        "revCount": 9,
+        "rev": "02fb16b9c5748c7b60bd0e80b985a7618893026c",
+        "revCount": 10,
         "type": "git",
         "url": "https://git.avali.network/avali.network/modpack"
       },
