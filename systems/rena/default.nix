@@ -8,6 +8,7 @@
     ./impl/headscale.nix
     ./impl/jackboxresoniteproxy.nix
     ./impl/mailserver.nix
+    ./impl/minecraft.nix
     ./impl/resonite.nix
     ./impl/storage.nix
   ];

@@ -45,6 +45,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+
+    nix-minecraft = {
+      url = "github:infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    modpack = {
+      url = "git+https://git.avali.network/avali.network/modpack";
+      flake = false;
+    };
   };
 
   outputs =
