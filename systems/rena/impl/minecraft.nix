@@ -8,7 +8,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     src = inputs.modpack;
-    packHash = "sha256-k36FBB7v5k5VwTpgQhOvuP5Aq+yWFR/ABF3hCDhUQ5k=";
+    packHash = "sha256-xIT+iAuc0e8lMSMgpqr0yupaal1uB1P1AEONqPhCKUg=";
   };
 
   inherit (modpack.manifest.versions) minecraft fabric;
@@ -47,6 +47,7 @@ in
 
       files = {
         "config/Discord-Integration.toml" = "${modpack}/config/Discord-Integration.toml";
+        "config/bluemap" = "${modpack}/config/bluemap";
       };
 
       serverProperties = {
@@ -81,6 +82,14 @@ in
       autoindex on;
       autoindex_localtime on;
     '';
+
+    locations = {
+      "/map".return = "301 /map/";
+      "/map/" = {
+        proxyPass = "http://127.0.0.1:8100/";
+        proxyWebsockets = true;
+      };
+    };
   };
 
   networking.firewall.allowedUDPPorts = [ 24454 ];
