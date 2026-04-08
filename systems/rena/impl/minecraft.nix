@@ -8,7 +8,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     src = inputs.modpack;
-    packHash = "sha256-vjytuXHOXHQBOQkuVa2lOVm3uzIEsMOa7j8kq7MR1S8=";
+    packHash = "sha256-k36FBB7v5k5VwTpgQhOvuP5Aq+yWFR/ABF3hCDhUQ5k=";
   };
 
   inherit (modpack.manifest.versions) minecraft fabric;
@@ -37,7 +37,7 @@ in
     servers.awawivr = {
       enable = true;
       openFirewall = true;
-      enableReload = true;
+      enableReload = false;
       package = pkgs.fabricServers.${serverVersion}.override { loaderVersion = fabric; };
       jvmOpts = "-Xms2G -Xmx16G";
 
