@@ -8,7 +8,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     src = inputs.modpack;
-    packHash = "sha256-70Omz2J6222r0O47g7BzSoiefUJm0bf9iQ+zT3VCDTk=";
+    packHash = "sha256-oWBPTLe5XrmNfQKaas78qaR0RxzK05dya2ZKgnCOeWg=";
   };
 
   inherit (modpack.manifest.versions) minecraft fabric;
