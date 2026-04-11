@@ -8,7 +8,7 @@
 let
   modpack = pkgs.fetchPackwizModpack {
     src = inputs.modpack;
-    packHash = "sha256-oWBPTLe5XrmNfQKaas78qaR0RxzK05dya2ZKgnCOeWg=";
+    packHash = "sha256-85J+sFEerx4wXgyHm11q0gQX5R/mDZ1Zxuh3B9jjBeM=";
   };
 
   inherit (modpack.manifest.versions) minecraft fabric;
@@ -58,7 +58,6 @@ in
         difficulty = 3;
         force-gamemode = true;
         gamemode = 0;
-        level-type = "minecraft:large_biomes";
         max-players = 16;
         motd = "awawi vr";
         spawn-protection = 0;
