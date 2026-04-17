@@ -24,6 +24,11 @@
         loginPassword = config.sops.placeholder."resonite/password";
         loginRequired = false;
 
+        allowedUrlHosts = [
+          "wss://featherpile.awawi.nexus"
+          "https://lock.avali.network"
+        ];
+
         startWorlds = [
           {
             isEnabled = true;
