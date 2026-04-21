@@ -310,6 +310,23 @@
         "url": "https://git.avali.network/avali.network/modpack"
       }
     },
+    "modpack-rewrite": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776780676,
+        "narHash": "sha256-QZrSazsmZd80C4wZ6SPvbNeS04nhj44ttEBGWopBS8w=",
+        "ref": "rewrite",
+        "rev": "e3c3527d8a6343e43ab85505b0689b8dc686772a",
+        "revCount": 14,
+        "type": "git",
+        "url": "https://git.avali.network/avali.network/modpack"
+      },
+      "original": {
+        "ref": "rewrite",
+        "type": "git",
+        "url": "https://git.avali.network/avali.network/modpack"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -433,6 +450,7 @@
         "impermanence": "impermanence",
         "jackboxresoniteproxy": "jackboxresoniteproxy",
         "modpack": "modpack",
+        "modpack-rewrite": "modpack-rewrite",
         "nix-minecraft": "nix-minecraft",
         "nixos-mailserver": "nixos-mailserver",
         "nixpkgs": "nixpkgs",

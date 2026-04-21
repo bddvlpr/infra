@@ -55,6 +55,11 @@
       url = "git+https://git.avali.network/avali.network/modpack";
       flake = false;
     };
+
+    modpack-rewrite = {
+      url = "git+https://git.avali.network/avali.network/modpack?ref=rewrite";
+      flake = false;
+    };
   };
 
   outputs =
