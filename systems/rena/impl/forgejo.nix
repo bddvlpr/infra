@@ -81,6 +81,8 @@
     TARGET = "unix://${config.services.forgejo.settings.server.HTTP_ADDR}";
   };
 
+  services.backup.jobs.forgejo.paths = [ config.services.forgejo.stateDir ];
+
   services.nginx.virtualHosts."git.avali.network" = {
     enableACME = true;
     forceSSL = true;

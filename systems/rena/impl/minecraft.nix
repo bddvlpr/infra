@@ -41,7 +41,7 @@
         serverVersion = lib.replaceStrings [ "." ] [ "_" ] "fabric-${minecraft}";
       in
       {
-        enable = true;
+        enable = false;
         openFirewall = true;
         enableReload = false;
         package = pkgs.fabricServers.${serverVersion}.override { loaderVersion = fabric; };
@@ -86,7 +86,7 @@
         serverVersion = lib.replaceStrings [ "." ] [ "_" ] "neoforge-${minecraft}";
       in
       {
-        enable = false;
+        enable = true;
         openFirewall = true;
         enableReload = false;
         package = pkgs.neoforgeServers.${serverVersion};
@@ -124,7 +124,7 @@
     enableACME = true;
     forceSSL = true;
 
-    root = inputs.modpack;
+    root = inputs.modpack-rewrite;
 
     extraConfig = ''
       autoindex on;
@@ -139,6 +139,8 @@
       };
     };
   };
+
+  services.backup.jobs.minecraft.paths = [ config.services.minecraft-servers.dataDir ];
 
   networking.firewall.allowedUDPPorts = [ 24454 ];
 }

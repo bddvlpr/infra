@@ -64,4 +64,6 @@
       $config['smtp_pass'] = "%p";
     '';
   };
+
+  services.backup.jobs.mailserver.paths = [ config.mailserver.storage.path ];
 }
