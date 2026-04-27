@@ -6,9 +6,11 @@
     ./impl/forgejo-runner.nix
     ./impl/guh.nix
     ./impl/headscale.nix
+    ./impl/immich.nix
     ./impl/jackboxresoniteproxy.nix
     ./impl/mailserver.nix
     ./impl/minecraft.nix
+    ./impl/postgresql.nix
     ./impl/resonite.nix
     ./impl/storage.nix
   ];
